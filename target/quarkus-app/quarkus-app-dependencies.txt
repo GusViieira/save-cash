@@ -4,6 +4,7 @@ com.aayushatharva.brotli4j:service::jar:1.16.0
 com.fasterxml.jackson.core:jackson-core::jar:2.18.2
 com.fasterxml:classmate::jar:1.7.0
 com.github.ben-manes.caffeine:caffeine::jar:3.1.8
+com.github.waffle:waffle-jna::jar:3.3.0
 com.google.errorprone:error_prone_annotations::jar:2.35.1
 com.sun.istack:istack-commons-runtime::jar:4.1.2
 io.agroal:agroal-api::jar:2.5
@@ -44,6 +45,7 @@ io.quarkus:quarkus-development-mode-spi::jar:3.17.5
 io.quarkus:quarkus-fs-util::jar:0.0.10
 io.quarkus:quarkus-hibernate-orm::jar:3.17.5
 io.quarkus:quarkus-hibernate-validator::jar:3.17.5
+io.quarkus:quarkus-jdbc-mariadb::jar:3.17.5
 io.quarkus:quarkus-jsonp::jar:3.17.5
 io.quarkus:quarkus-mutiny::jar:3.17.5
 io.quarkus:quarkus-narayana-jta::jar:3.17.5
@@ -113,6 +115,8 @@ jakarta.validation:jakarta.validation-api::jar:3.0.2
 jakarta.ws.rs:jakarta.ws.rs-api::jar:3.1.0
 jakarta.xml.bind:jakarta.xml.bind-api::jar:4.0.2
 net.bytebuddy:byte-buddy::jar:1.14.18
+net.java.dev.jna:jna-platform::jar:5.8.0
+net.java.dev.jna:jna::jar:5.8.0
 org.antlr:antlr4-runtime::jar:4.13.0
 org.eclipse.angus:angus-activation::jar:2.0.2
 org.eclipse.microprofile.config:microprofile-config-api::jar:3.1
@@ -139,6 +143,7 @@ org.jboss.slf4j:slf4j-jboss-logmanager::jar:2.0.0.Final
 org.jboss.threads:jboss-threads::jar:3.8.0.Final
 org.jboss:jboss-transaction-spi::jar:8.0.0.Final
 org.jctools:jctools-core::jar:4.0.5
+org.mariadb.jdbc:mariadb-java-client::jar:3.4.1
 org.reactivestreams:reactive-streams::jar:1.0.4
 org.slf4j:slf4j-api::jar:2.0.6
 org.wildfly.common:wildfly-common::jar:1.7.0.Final
