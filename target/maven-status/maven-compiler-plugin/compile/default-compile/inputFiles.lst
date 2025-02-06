@@ -1,10 +1,17 @@
+C:\workspace pessoal\save-cash\src\main\java\com\saveCash\adapters\controllers\AuthResource.java
 C:\workspace pessoal\save-cash\src\main\java\com\saveCash\adapters\controllers\request\CreateUserRequest.java
+C:\workspace pessoal\save-cash\src\main\java\com\saveCash\adapters\controllers\request\LoginRequest.java
 C:\workspace pessoal\save-cash\src\main\java\com\saveCash\adapters\controllers\UserController.java
 C:\workspace pessoal\save-cash\src\main\java\com\saveCash\adapters\dtos\UserDTO.java
 C:\workspace pessoal\save-cash\src\main\java\com\saveCash\adapters\mappers\CreateUserMapper.java
 C:\workspace pessoal\save-cash\src\main\java\com\saveCash\adapters\presenters\UserPresenter.java
+C:\workspace pessoal\save-cash\src\main\java\com\saveCash\domain\entities\User.java
+C:\workspace pessoal\save-cash\src\main\java\com\saveCash\domain\mappers\UserUseCaseMapper.java
 C:\workspace pessoal\save-cash\src\main\java\com\saveCash\domain\models\UserModel.java
 C:\workspace pessoal\save-cash\src\main\java\com\saveCash\domain\repositories\UserRepository.java
+C:\workspace pessoal\save-cash\src\main\java\com\saveCash\domain\usecases\UserUsecases\CreateUserUsecase.java
+C:\workspace pessoal\save-cash\src\main\java\com\saveCash\domain\usecases\UserUsecases\DeleteUserUsecase.java
+C:\workspace pessoal\save-cash\src\main\java\com\saveCash\domain\usecases\UserUsecases\UpdateUserUsecase.java
 C:\workspace pessoal\save-cash\src\main\java\com\saveCash\infra\config\ApplicationConfig.java
 C:\workspace pessoal\save-cash\src\main\java\com\saveCash\infra\database\repository\LoginRepositoryImpl.java
 C:\workspace pessoal\save-cash\src\main\java\com\saveCash\infra\database\repository\UserRepositoryImpl.java
@@ -12,7 +19,6 @@ C:\workspace pessoal\save-cash\src\main\java\com\saveCash\infra\database\schemas
 C:\workspace pessoal\save-cash\src\main\java\com\saveCash\infra\database\schemas\LoginEntity.java
 C:\workspace pessoal\save-cash\src\main\java\com\saveCash\infra\database\schemas\TransactionEntity.java
 C:\workspace pessoal\save-cash\src\main\java\com\saveCash\infra\database\schemas\UserEntity.java
+C:\workspace pessoal\save-cash\src\main\java\com\saveCash\infra\mappers\UserInfraMapper.java
+C:\workspace pessoal\save-cash\src\main\java\com\saveCash\infra\securirty\TokenGenerator.java
 C:\workspace pessoal\save-cash\src\main\java\com\saveCash\infra\services\AuthService.java
-C:\workspace pessoal\save-cash\src\main\java\com\saveCash\usecases\UserUsecases\CreateUserUsecase.java
-C:\workspace pessoal\save-cash\src\main\java\com\saveCash\usecases\UserUsecases\DeleteUserUsecase.java
-C:\workspace pessoal\save-cash\src\main\java\com\saveCash\usecases\UserUsecases\UpdateUserUsecase.java

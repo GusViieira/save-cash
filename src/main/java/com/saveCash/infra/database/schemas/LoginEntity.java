@@ -1,12 +1,14 @@
 package com.saveCash.infra.database.schemas;
 
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 @Entity(name ="login")
-public class LoginEntity {
+public class LoginEntity extends PanacheEntityBase {
 
     @Id
     @Column(name = "id_login")
@@ -17,10 +19,10 @@ public class LoginEntity {
     private String password;
 
     @Column(name = "update_date")
-    private Date updateDate;
+    private LocalDateTime updateDate;
 
     @Column(name = "registration_date")
-    private Date registrationDate;
+    private LocalDateTime registrationDate;
 
     public int getIdLogin() {
         return idLogin;
@@ -46,19 +48,19 @@ public class LoginEntity {
         this.password = password;
     }
 
-    public Date getUpdateDate() {
+    public LocalDateTime getUpdateDate() {
         return updateDate;
     }
 
-    public void setUpdateDate(Date updateDate) {
+    public void setUpdateDate(LocalDateTime updateDate) {
         this.updateDate = updateDate;
     }
 
-    public Date getRegistrationDate() {
+    public LocalDateTime getRegistrationDate() {
         return registrationDate;
     }
 
-    public void setRegistrationDate(Date registrationDate) {
+    public void setRegistrationDate(LocalDateTime registrationDate) {
         this.registrationDate = registrationDate;
     }
 }

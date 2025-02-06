@@ -8,7 +8,7 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-01-10T23:28:07+0000",
+    date = "2025-02-06T21:10:21+0000",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21 (Oracle Corporation)"
 )
 @Singleton
@@ -27,6 +27,9 @@ public class CreateUserMapperImpl implements CreateUserMapper {
         userDTO.setSurname( request.getSurname() );
         userDTO.setEmail( request.getEmail() );
         userDTO.setPassword( request.getPassword() );
+        userDTO.setPhoneNumber( request.getPhoneNumber() );
+        userDTO.setBirthDate( request.getBirthDate() );
+        userDTO.setCountry( request.getCountry() );
 
         return userDTO;
     }

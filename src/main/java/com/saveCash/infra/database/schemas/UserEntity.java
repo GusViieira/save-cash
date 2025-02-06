@@ -1,16 +1,19 @@
 package com.saveCash.infra.database.schemas;
 
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
 @Entity(name ="user")
-public class UserEntity {
+public class UserEntity extends PanacheEntityBase {
 
-    @Id
+    @Id()
     @Column(name = "id_user")
     private int idUser;
 
@@ -19,10 +22,10 @@ public class UserEntity {
     private String surname;
 
     @Column(name = "phone_number")
-    private String phone;
+    private String phoneNumber;
 
     @Column(name = "birth_date")
-    private Date birth;
+    private LocalDate birthDate;
 
     private String country;
 
@@ -60,20 +63,20 @@ public class UserEntity {
         this.surname = surname;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
-    public Date getBirth() {
-        return birth;
+    public LocalDate getBirthDate() {
+        return birthDate;
     }
 
-    public void setBirth(Date birth) {
-        this.birth = birth;
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
     }
 
     public String getCountry() {

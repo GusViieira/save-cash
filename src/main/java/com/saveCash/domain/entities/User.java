@@ -1,11 +1,9 @@
-package com.saveCash.adapters.dtos;
-
-import io.quarkus.elytron.security.common.BcryptUtil;
+package com.saveCash.domain.entities;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
-public class UserDTO {
-
+public class User {
     private String name;
     private String surname;
     private String email;
@@ -13,6 +11,8 @@ public class UserDTO {
     private String phoneNumber;
     private LocalDate birthDate;
     private String country;
+    private LocalDateTime tsUpdate;
+    private LocalDateTime tsregistration;
 
     public String getName() {
         return name;
@@ -42,9 +42,24 @@ public class UserDTO {
         return password;
     }
 
-    // CRIPTOGRAFA A SENHA DO USUARIO CADASTRADA
     public void setPassword(String password) {
-        this.password = BcryptUtil.bcryptHash(password);
+        this.password = password;
+    }
+
+    public LocalDateTime getTsUpdate() {
+        return tsUpdate;
+    }
+
+    public void setTsUpdate(LocalDateTime tsUpdate) {
+        this.tsUpdate = tsUpdate;
+    }
+
+    public LocalDateTime getTsregistration() {
+        return tsregistration;
+    }
+
+    public void setTsregistration(LocalDateTime tsregistration) {
+        this.tsregistration = tsregistration;
     }
 
     public String getPhoneNumber() {

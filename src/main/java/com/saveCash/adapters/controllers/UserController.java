@@ -2,7 +2,7 @@ package com.saveCash.adapters.controllers;
 
 import com.saveCash.adapters.controllers.request.CreateUserRequest;
 import com.saveCash.adapters.mappers.CreateUserMapper;
-import com.saveCash.usecases.UserUsecases.CreateUserUsecase;
+import com.saveCash.domain.usecases.UserUsecases.CreateUserUsecase;
 
 import jakarta.inject.Inject;
 import jakarta.validation.Valid;
@@ -22,7 +22,7 @@ public class UserController {
     @Inject
     private CreateUserMapper createUserMapper;
 
-    @Path("/createUser")
+    @Path("/register")
     @POST
     public Response registerUser(@Valid CreateUserRequest createUserRequest) throws Exception{
        return createUserUsecase.createUser(createUserMapper.toUserUseCase(createUserRequest));
