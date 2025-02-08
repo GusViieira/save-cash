@@ -1,3 +1,4 @@
+com\saveCash\adapters\producers\UserProduces\CreateUserProducer.class
 com\saveCash\infra\securirty\TokenGenerator.class
 com\saveCash\adapters\controllers\request\LoginRequest.class
 com\saveCash\adapters\dtos\UserDTO.class
@@ -19,7 +20,6 @@ com\saveCash\infra\database\repository\UserRepositoryImpl.class
 com\saveCash\domain\entities\User.class
 com\saveCash\adapters\controllers\UserController.class
 com\saveCash\infra\config\ApplicationConfig.class
-com\saveCash\adapters\presenters\UserPresenter.class
 com\saveCash\domain\models\UserModel.class
 com\saveCash\infra\database\schemas\LoginEntity.class
 com\saveCash\adapters\mappers\CreateUserMapper.class
