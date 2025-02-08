@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="265e3bce-2dc8-4d1f-ac76-67f549ffe11a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/saveCash/adapters/producers/UserProduces/CreateUserProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/saveCash/adapters/presenters/UserPresenter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/saveCash/domain/usecases/UserUsecases/CreateUserUsecase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/saveCash/domain/usecases/UserUsecases/CreateUserUsecase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/saveCash/adapters/presenters/UserPresenter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/saveCash/infra/database/repository/UserRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/saveCash/infra/database/repository/UserRepositoryImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/saveCash/adapters/mappers/CreateUserMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/saveCash/adapters/mappers/CreateUserMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/quarkus-app/app/save-cash-1.0.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/quarkus-app/app/save-cash-1.0.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/quarkus-app/quarkus-run.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/quarkus-app/quarkus-run.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/quarkus-app/quarkus/generated-bytecode.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/quarkus-app/quarkus/generated-bytecode.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/quarkus-app/quarkus/quarkus-application.dat" beforeDir="false" afterPath="$PROJECT_DIR$/target/quarkus-app/quarkus/quarkus-application.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/quarkus-app/quarkus/transformed-bytecode.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/quarkus-app/quarkus/transformed-bytecode.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/save-cash-1.0.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/save-cash-1.0.0-SNAPSHOT.jar" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2rDjzFndYyU1EjDZDrv5VTFgoiR" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Maven.save-cash [clean,install,-DskipTests...].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.save-cash [clean,install,-DskipTests].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.save-cash [clean,install,-Dskiptests].executor&quot;: &quot;Run&quot;,
+    &quot;Remote JVM Debug.Dbug.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;sprint0&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/workspace estudos/quarkus-quickstarts-main/security-jwt-quickstart&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\workspace pessoal\save-cash\src\main\resources\keys" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean install -Dskiptests" />
+      <command value="mvn clean install -DskipTests" />
+      <command value="mvn clean install -DskipTests quarkus:dev" />
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Dbug" type="Remote">
+      <module name="save-cash" />
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <option name="AUTO_RESTART" value="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="5005" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="265e3bce-2dc8-4d1f-ac76-67f549ffe11a" name="Changes" comment="" />
+      <created>1736100801719</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1736100801719</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/saveCash/adapters/controllers/AuthResource.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/saveCash/infra/services/AuthService.java</url>
+          <line>10</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

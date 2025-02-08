@@ -1,1 +1,6 @@
 maven-wrapper.jar
+/target/
+.idea/workspace.xml
+src/main/resources/keys/privateKey.pem
+src/main/resources/keys/publicKey.pem
+.idea/workspace.xml

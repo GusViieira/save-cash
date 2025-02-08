@@ -1,4 +1,7 @@
 package com.saveCash.domain.repositories;
 
-interface UserRepository {
+import com.saveCash.domain.entities.User;
+
+public interface UserRepository {
+    void createUser(User user);
 }
