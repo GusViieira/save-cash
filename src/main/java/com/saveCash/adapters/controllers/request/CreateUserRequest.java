@@ -3,31 +3,31 @@ package com.saveCash.adapters.controllers.request;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.json.bind.annotation.JsonbDateFormat;
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class CreateUserRequest {
 
-    @NotNull(message = "Name is required")
-    @Size(min = 2, max = 50, message = "Name must be between 2 and 50 characters")
+    @NotBlank(message = "Name is required")
+    @Size(min = 3, max = 50, message = "Name must be between 2 and 50 characters")
     @Schema(description = "User name")
     private String name;
 
-    @NotNull(message = "Surname is required")
-    @Size(min = 2, max = 50, message = "Surname must be between 2 and 50 characters")
+    @NotBlank(message = "Surname is required")
+    @Size(min = 3, max = 50, message = "Surname must be between 2 and 50 characters")
     @Schema(description = "The last name")
     private String surname;
 
-    @NotNull(message = "Email is required")
+    @NotBlank(message = "Email is required")
     @Email(message = "Invalid email format")
     @Schema(description = "Email user")
     private String email;
 
-    @NotNull(message = "Password is required")
+    @NotBlank(message = "Password is required")
     @Size(min = 8, message = "Password must be at least 8 characters long")
     @Schema(description = "User password")
     private String password;

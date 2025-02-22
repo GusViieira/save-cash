@@ -12,6 +12,8 @@ C:\workspace pessoal\save-cash\src\main\java\com\saveCash\domain\repositories\Us
 C:\workspace pessoal\save-cash\src\main\java\com\saveCash\domain\usecases\UserUsecases\CreateUserUsecase.java
 C:\workspace pessoal\save-cash\src\main\java\com\saveCash\domain\usecases\UserUsecases\DeleteUserUsecase.java
 C:\workspace pessoal\save-cash\src\main\java\com\saveCash\domain\usecases\UserUsecases\UpdateUserUsecase.java
+C:\workspace pessoal\save-cash\src\main\java\com\saveCash\exceptions\ErrorResponse.java
+C:\workspace pessoal\save-cash\src\main\java\com\saveCash\exceptions\UserExceptions.java
 C:\workspace pessoal\save-cash\src\main\java\com\saveCash\infra\config\ApplicationConfig.java
 C:\workspace pessoal\save-cash\src\main\java\com\saveCash\infra\database\repository\LoginRepositoryImpl.java
 C:\workspace pessoal\save-cash\src\main\java\com\saveCash\infra\database\repository\UserRepositoryImpl.java

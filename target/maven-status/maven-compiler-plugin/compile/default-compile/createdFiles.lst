@@ -4,11 +4,14 @@ com\saveCash\adapters\controllers\request\LoginRequest.class
 com\saveCash\adapters\dtos\UserDTO.class
 com\saveCash\domain\usecases\UserUsecases\CreateUserUsecase.class
 com\saveCash\adapters\controllers\request\CreateUserRequest.class
+com\saveCash\exceptions\ErrorResponse.class
 com\saveCash\adapters\controllers\AuthResource.class
 com\saveCash\infra\database\schemas\TransactionEntity.class
+com\saveCash\exceptions\UserExceptions$DuplicateUserException.class
 com\saveCash\infra\database\repository\LoginRepositoryImpl.class
 com\saveCash\infra\mappers\UserInfraMapper.class
 com\saveCash\domain\mappers\UserUseCaseMapperImpl.class
+com\saveCash\exceptions\UserExceptions.class
 com\saveCash\domain\mappers\UserUseCaseMapper.class
 com\saveCash\domain\usecases\UserUsecases\UpdateUserUsecase.class
 com\saveCash\infra\services\AuthService.class

@@ -4,6 +4,8 @@ import com.saveCash.adapters.controllers.request.CreateUserRequest;
 import com.saveCash.adapters.mappers.CreateUserMapper;
 import com.saveCash.domain.usecases.UserUsecases.CreateUserUsecase;
 
+import com.saveCash.exceptions.ErrorResponse;
+import com.saveCash.exceptions.UserExceptions;
 import jakarta.inject.Inject;
 import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
@@ -25,6 +27,12 @@ public class UserController {
     @Path("/register")
     @POST
     public Response registerUser(@Valid CreateUserRequest createUserRequest) throws Exception{
-       return createUserUsecase.createUser(createUserMapper.toUserUseCase(createUserRequest));
+      try{
+          return createUserUsecase.createUser(createUserMapper.toUserUseCase(createUserRequest));
+      } catch (UserExceptions.DuplicateUserException e) {
+          return Response.status(Response.Status.CONFLICT).entity(new ErrorResponse(e.getMessage())).build();
+      } catch (Exception e) {
+          return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(new ErrorResponse("Erro interno do servidor")).build();
+      }
     }
 }
