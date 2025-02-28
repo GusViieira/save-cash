@@ -1,26 +1,28 @@
-C:\workspace pessoal\save-cash\src\main\java\com\saveCash\adapters\controllers\AuthResource.java
-C:\workspace pessoal\save-cash\src\main\java\com\saveCash\adapters\controllers\request\CreateUserRequest.java
-C:\workspace pessoal\save-cash\src\main\java\com\saveCash\adapters\controllers\request\LoginRequest.java
-C:\workspace pessoal\save-cash\src\main\java\com\saveCash\adapters\controllers\UserController.java
-C:\workspace pessoal\save-cash\src\main\java\com\saveCash\adapters\dtos\UserDTO.java
-C:\workspace pessoal\save-cash\src\main\java\com\saveCash\adapters\mappers\CreateUserMapper.java
-C:\workspace pessoal\save-cash\src\main\java\com\saveCash\adapters\producers\UserProduces\CreateUserProducer.java
-C:\workspace pessoal\save-cash\src\main\java\com\saveCash\domain\entities\User.java
-C:\workspace pessoal\save-cash\src\main\java\com\saveCash\domain\mappers\UserUseCaseMapper.java
-C:\workspace pessoal\save-cash\src\main\java\com\saveCash\domain\models\UserModel.java
-C:\workspace pessoal\save-cash\src\main\java\com\saveCash\domain\repositories\UserRepository.java
-C:\workspace pessoal\save-cash\src\main\java\com\saveCash\domain\usecases\UserUsecases\CreateUserUsecase.java
-C:\workspace pessoal\save-cash\src\main\java\com\saveCash\domain\usecases\UserUsecases\DeleteUserUsecase.java
-C:\workspace pessoal\save-cash\src\main\java\com\saveCash\domain\usecases\UserUsecases\UpdateUserUsecase.java
-C:\workspace pessoal\save-cash\src\main\java\com\saveCash\exceptions\ErrorResponse.java
-C:\workspace pessoal\save-cash\src\main\java\com\saveCash\exceptions\UserExceptions.java
-C:\workspace pessoal\save-cash\src\main\java\com\saveCash\infra\config\ApplicationConfig.java
-C:\workspace pessoal\save-cash\src\main\java\com\saveCash\infra\database\repository\LoginRepositoryImpl.java
-C:\workspace pessoal\save-cash\src\main\java\com\saveCash\infra\database\repository\UserRepositoryImpl.java
-C:\workspace pessoal\save-cash\src\main\java\com\saveCash\infra\database\schemas\CategoryEntity.java
-C:\workspace pessoal\save-cash\src\main\java\com\saveCash\infra\database\schemas\LoginEntity.java
-C:\workspace pessoal\save-cash\src\main\java\com\saveCash\infra\database\schemas\TransactionEntity.java
-C:\workspace pessoal\save-cash\src\main\java\com\saveCash\infra\database\schemas\UserEntity.java
-C:\workspace pessoal\save-cash\src\main\java\com\saveCash\infra\mappers\UserInfraMapper.java
-C:\workspace pessoal\save-cash\src\main\java\com\saveCash\infra\securirty\TokenGenerator.java
-C:\workspace pessoal\save-cash\src\main\java\com\saveCash\infra\services\AuthService.java
+C:\Workspace\save-cash\src\main\java\com\saveCash\adapters\controllers\AuthResource.java
+C:\Workspace\save-cash\src\main\java\com\saveCash\adapters\controllers\request\CreateUserRequest.java
+C:\Workspace\save-cash\src\main\java\com\saveCash\adapters\controllers\request\LoginRequest.java
+C:\Workspace\save-cash\src\main\java\com\saveCash\adapters\controllers\UserController.java
+C:\Workspace\save-cash\src\main\java\com\saveCash\adapters\dtos\UserDTO.java
+C:\Workspace\save-cash\src\main\java\com\saveCash\adapters\mappers\CreateUserMapper.java
+C:\Workspace\save-cash\src\main\java\com\saveCash\adapters\producers\UserProduces\CreateUserProducer.java
+C:\Workspace\save-cash\src\main\java\com\saveCash\adapters\utils\ApiResponse.java
+C:\Workspace\save-cash\src\main\java\com\saveCash\domain\entities\User.java
+C:\Workspace\save-cash\src\main\java\com\saveCash\domain\mappers\UserUseCaseMapper.java
+C:\Workspace\save-cash\src\main\java\com\saveCash\domain\models\UserModel.java
+C:\Workspace\save-cash\src\main\java\com\saveCash\domain\repositories\UserRepository.java
+C:\Workspace\save-cash\src\main\java\com\saveCash\domain\usecases\UserUsecases\CreateUserUsecase.java
+C:\Workspace\save-cash\src\main\java\com\saveCash\domain\usecases\UserUsecases\DeleteUserUsecase.java
+C:\Workspace\save-cash\src\main\java\com\saveCash\domain\usecases\UserUsecases\UpdateUserUsecase.java
+C:\Workspace\save-cash\src\main\java\com\saveCash\exceptions\ErrorResponse.java
+C:\Workspace\save-cash\src\main\java\com\saveCash\exceptions\GlobalExceptionHandler.java
+C:\Workspace\save-cash\src\main\java\com\saveCash\exceptions\UserExceptions.java
+C:\Workspace\save-cash\src\main\java\com\saveCash\infra\config\ApplicationConfig.java
+C:\Workspace\save-cash\src\main\java\com\saveCash\infra\database\repository\LoginRepositoryImpl.java
+C:\Workspace\save-cash\src\main\java\com\saveCash\infra\database\repository\UserRepositoryImpl.java
+C:\Workspace\save-cash\src\main\java\com\saveCash\infra\database\schemas\CategoryEntity.java
+C:\Workspace\save-cash\src\main\java\com\saveCash\infra\database\schemas\LoginEntity.java
+C:\Workspace\save-cash\src\main\java\com\saveCash\infra\database\schemas\TransactionEntity.java
+C:\Workspace\save-cash\src\main\java\com\saveCash\infra\database\schemas\UserEntity.java
+C:\Workspace\save-cash\src\main\java\com\saveCash\infra\mappers\UserInfraMapper.java
+C:\Workspace\save-cash\src\main\java\com\saveCash\infra\securirty\TokenGenerator.java
+C:\Workspace\save-cash\src\main\java\com\saveCash\infra\services\AuthService.java

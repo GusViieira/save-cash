@@ -2,6 +2,7 @@ package com.saveCash.adapters.controllers;
 
 import com.saveCash.adapters.controllers.request.CreateUserRequest;
 import com.saveCash.adapters.mappers.CreateUserMapper;
+import com.saveCash.adapters.utils.ApiResponse;
 import com.saveCash.domain.usecases.UserUsecases.CreateUserUsecase;
 
 import com.saveCash.exceptions.ErrorResponse;
@@ -26,13 +27,15 @@ public class UserController {
 
     @Path("/register")
     @POST
-    public Response registerUser(@Valid CreateUserRequest createUserRequest) throws Exception{
-      try{
-          return createUserUsecase.createUser(createUserMapper.toUserUseCase(createUserRequest));
-      } catch (UserExceptions.DuplicateUserException e) {
-          return Response.status(Response.Status.CONFLICT).entity(new ErrorResponse(e.getMessage())).build();
-      } catch (Exception e) {
-          return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(new ErrorResponse("Erro interno do servidor")).build();
-      }
+    public Response registerUser(@Valid CreateUserRequest createUserRequest) throws Exception {
+        try {
+            return createUserUsecase.createUser(createUserMapper.toUserUseCase(createUserRequest));
+        } catch (UserExceptions.DuplicateUserException e) {
+            ErrorResponse error = new ErrorResponse(e.getMessage());
+            return Response.status(Response.Status.BAD_REQUEST).entity(new ApiResponse<>(error)).build();
+        } catch (Exception e) {
+            ErrorResponse error = new ErrorResponse(e.getMessage());
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(new ApiResponse<>(error)).build();
+        }
     }
 }

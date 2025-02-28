@@ -1,6 +1,9 @@
 package com.saveCash.adapters.controllers;
 
 import com.saveCash.adapters.controllers.request.LoginRequest;
+import com.saveCash.adapters.utils.ApiResponse;
+import com.saveCash.exceptions.ErrorResponse;
+import com.saveCash.exceptions.UserExceptions;
 import com.saveCash.infra.services.AuthService;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.POST;
@@ -15,12 +18,20 @@ public class AuthResource {
 
     @POST
     @Path("/login")
-    public Response login(LoginRequest loginRequest){
-        String jwt = authService.authenticate(loginRequest.getEmail(), loginRequest.getPassword());
-        if(jwt != null){
-            return Response.ok(jwt).build();
+    public Response login(LoginRequest loginRequest) {
+        try {
+            String jwt = authService.authenticate(loginRequest.getEmail(), loginRequest.getPassword());
+            if (jwt != null) {
+               return Response.ok(new ApiResponse<>(jwt)).build();
+            }
+        } catch (UserExceptions.UserNotFoundException | UserExceptions.InvalidPasswordException e) {
+            ErrorResponse error = new ErrorResponse(e.getMessage());
+            return Response.status(Response.Status.UNAUTHORIZED).entity(new ApiResponse<>(error)).build();
+        } catch (Exception e) {
+            ErrorResponse error = new ErrorResponse(e.getMessage());
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity(new ApiResponse<>(error)).build();
         }
-
-        return Response.status(Response.Status.UNAUTHORIZED).entity("Credenciais inválidas").build();
+        return Response.status(Response.Status.UNAUTHORIZED).entity(new ErrorResponse("Credenciais inválidas")).build();
     }
 }
