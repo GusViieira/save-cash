@@ -34,7 +34,7 @@ public class UserController {
             ErrorResponse error = new ErrorResponse(e.getMessage());
             return Response.status(Response.Status.BAD_REQUEST).entity(new ApiResponse<>(error)).build();
         } catch (Exception e) {
-            ErrorResponse error = new ErrorResponse(e.getMessage());
+            ErrorResponse error = new ErrorResponse("Erro interno do servidor");
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(new ApiResponse<>(error)).build();
         }
     }
