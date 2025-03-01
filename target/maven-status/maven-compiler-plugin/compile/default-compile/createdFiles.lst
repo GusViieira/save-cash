@@ -16,6 +16,7 @@ com\saveCash\domain\mappers\UserUseCaseMapperImpl.class
 com\saveCash\exceptions\GlobalExceptionHandler.class
 com\saveCash\exceptions\UserExceptions.class
 com\saveCash\domain\mappers\UserUseCaseMapper.class
+com\saveCash\adapters\controllers\response\LoginResponse.class
 com\saveCash\domain\usecases\UserUsecases\UpdateUserUsecase.class
 com\saveCash\infra\services\AuthService.class
 com\saveCash\infra\database\schemas\CategoryEntity.class
@@ -23,11 +24,13 @@ com\saveCash\infra\mappers\UserInfraMapperImpl.class
 com\saveCash\adapters\mappers\CreateUserMapperImpl.class
 com\saveCash\domain\repositories\UserRepository.class
 com\saveCash\infra\database\repository\UserRepositoryImpl.class
+com\saveCash\adapters\producers\UserProduces\GetUserProducer.class
 com\saveCash\domain\entities\User.class
 com\saveCash\adapters\controllers\UserController.class
 com\saveCash\adapters\utils\ApiResponse.class
 com\saveCash\infra\config\ApplicationConfig.class
 com\saveCash\domain\models\UserModel.class
+com\saveCash\domain\usecases\UserUsecases\GetUserUseCase.class
 com\saveCash\infra\database\schemas\LoginEntity.class
 com\saveCash\adapters\mappers\CreateUserMapper.class
 com\saveCash\domain\usecases\UserUsecases\DeleteUserUsecase.class

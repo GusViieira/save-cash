@@ -1,6 +1,7 @@
 package com.saveCash.adapters.controllers;
 
 import com.saveCash.adapters.controllers.request.LoginRequest;
+import com.saveCash.adapters.controllers.response.LoginResponse;
 import com.saveCash.adapters.utils.ApiResponse;
 import com.saveCash.exceptions.ErrorResponse;
 import com.saveCash.exceptions.UserExceptions;
@@ -20,9 +21,9 @@ public class AuthResource {
     @Path("/login")
     public Response login(LoginRequest loginRequest) {
         try {
-            String jwt = authService.authenticate(loginRequest.getEmail(), loginRequest.getPassword());
-            if (jwt != null) {
-               return Response.ok(new ApiResponse<>(jwt)).build();
+            LoginResponse response = authService.authenticate(loginRequest.getEmail(), loginRequest.getPassword());
+            if (response != null) {
+               return Response.ok(new ApiResponse<>(response)).build();
             }
         } catch (UserExceptions.UserNotFoundException | UserExceptions.InvalidPasswordException e) {
             ErrorResponse error = new ErrorResponse(e.getMessage());

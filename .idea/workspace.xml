@@ -4,27 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="265e3bce-2dc8-4d1f-ac76-67f549ffe11a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/saveCash/adapters/utils/ApiResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/saveCash/exceptions/GlobalExceptionHandler.java" afterDir="false" />
+    <list default="true" id="265e3bce-2dc8-4d1f-ac76-67f549ffe11a" name="Changes" comment="correcoes api de usuarios">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/saveCash/adapters/controllers/response/LoginResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/saveCash/adapters/producers/UserProduces/GetUserProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/saveCash/domain/usecases/UserUsecases/GetUserUseCase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/saveCash/adapters/controllers/AuthResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/saveCash/adapters/controllers/AuthResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/saveCash/adapters/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/saveCash/adapters/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/saveCash/exceptions/UserExceptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/saveCash/exceptions/UserExceptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/saveCash/domain/mappers/UserUseCaseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/saveCash/domain/mappers/UserUseCaseMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/saveCash/domain/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/saveCash/domain/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/saveCash/infra/database/repository/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/saveCash/infra/database/repository/UserRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/saveCash/infra/mappers/UserInfraMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/saveCash/infra/mappers/UserInfraMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/saveCash/infra/services/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/saveCash/infra/services/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/saveCash/adapters/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/saveCash/adapters/controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/saveCash/domain/repositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/saveCash/domain/repositories/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/saveCash/infra/database/repository/UserRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/saveCash/infra/database/repository/UserRepositoryImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/saveCash/infra/services/AuthService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/saveCash/infra/services/AuthService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/saveCash/adapters/mappers/CreateUserMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/saveCash/adapters/mappers/CreateUserMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/quarkus-app/app/save-cash-1.0.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/quarkus-app/app/save-cash-1.0.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/quarkus-app/quarkus-run.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/quarkus-app/quarkus-run.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/quarkus-app/quarkus/generated-bytecode.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/quarkus-app/quarkus/generated-bytecode.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/quarkus-app/quarkus/quarkus-application.dat" beforeDir="false" afterPath="$PROJECT_DIR$/target/quarkus-app/quarkus/quarkus-application.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/quarkus-app/quarkus/transformed-bytecode.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/quarkus-app/quarkus/transformed-bytecode.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/quarkus-artifact.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/quarkus-artifact.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/save-cash-1.0.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/save-cash-1.0.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +49,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "GusViieira"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/GusViieira/save-cash.git",
+    "accountId": "f41b8ef5-d59d-4577-887b-4b01f411c3bf"
+  }
+}]]></component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -67,25 +80,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Maven.save-cash [clean,install,-DskipTests...].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.save-cash [clean,install,-DskipTests].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.save-cash [clean,install,-Dskiptests].executor&quot;: &quot;Run&quot;,
-    &quot;Remote JVM Debug.Dbug.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;sprint0&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/workspace estudos/quarkus-quickstarts-main/security-jwt-quickstart&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Maven.save-cash [clean,install,-DskipTests...].executor": "Run",
+    "Maven.save-cash [clean,install,-DskipTests].executor": "Run",
+    "Maven.save-cash [clean,install,-Dskiptests].executor": "Run",
+    "Remote JVM Debug.Dbug.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "#2 on sprint0",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/workspace estudos/quarkus-quickstarts-main/security-jwt-quickstart",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\workspace pessoal\save-cash\src\main\resources\keys" />
@@ -123,9 +136,31 @@
       <option name="presentableId" value="Default" />
       <updated>1736100801719</updated>
     </task>
+    <task id="LOCAL-00001" summary="correcoes api de usuarios">
+      <option name="closed" value="true" />
+      <created>1740775887792</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1740775887792</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="correcoes api de usuarios" />
+    <option name="LAST_COMMIT_MESSAGE" value="correcoes api de usuarios" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/saveCash/infra/services/AuthService.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,6 +1,7 @@
 package com.saveCash.infra.database.repository;
 
 import com.saveCash.domain.entities.User;
+import com.saveCash.domain.mappers.UserUseCaseMapper;
 import com.saveCash.domain.repositories.UserRepository;
 import com.saveCash.infra.database.schemas.LoginEntity;
 import com.saveCash.infra.database.schemas.UserEntity;
@@ -19,16 +20,25 @@ public class UserRepositoryImpl implements PanacheRepository<UserEntity>, UserRe
     LoginRepositoryImpl loginRepositoryImpl;
 
     @Inject
+    UserUseCaseMapper userUseCaseMapper;
+
+    @Inject
     UserInfraMapper userInfraMapper;
 
     @Transactional
     public void createUser(User user){
-        UserEntity entity = userInfraMapper.toUserSchema(user);
+        UserEntity entity = userUseCaseMapper.toRepository(user);
         loginRepositoryImpl.registerLogin(user);
         LoginEntity loginEntity = loginRepositoryImpl.getIdLogin(user);
 
         entity.setTsUpdateDate(LocalDateTime.now().toString());
         entity.setLogin(loginEntity);
         persist(entity);
+    }
+
+    public User getUserByIdLogin(int idLogin){
+        UserEntity userEntity = find("login.id", idLogin).firstResult();
+        return userInfraMapper.toUserUseCase(userEntity);
+
     }
 }

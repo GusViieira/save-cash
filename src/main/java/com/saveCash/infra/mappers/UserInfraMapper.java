@@ -7,5 +7,5 @@ import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "jakarta", injectionStrategy = InjectionStrategy.FIELD)
 public interface UserInfraMapper {
-    UserEntity toUserSchema(User user);
+    User toUserUseCase(UserEntity userEntity);
 }
