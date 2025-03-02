@@ -30,6 +30,7 @@ public class AuthService {
         LoginResponse loginResponse = new LoginResponse();
         User user = getUserUseCase.getUserByLoginId(foundUser.getIdLogin());
         loginResponse.setName(user.getName());
+        loginResponse.setEmail(username);
         loginResponse.setJwt(TokenGenerator.generate(foundUser.getEmail()));
 
         return loginResponse;
