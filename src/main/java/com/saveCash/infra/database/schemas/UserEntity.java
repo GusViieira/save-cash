@@ -39,6 +39,8 @@ public class UserEntity extends PanacheEntityBase {
     @OneToMany(mappedBy = "user")
     private List<TransactionEntity> transactions;
 
+    private String email;
+
     public int getIdUser() {
         return idUser;
     }
@@ -109,5 +111,13 @@ public class UserEntity extends PanacheEntityBase {
 
     public void setTransactions(List<TransactionEntity> transactions) {
         this.transactions = transactions;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

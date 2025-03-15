@@ -23,4 +23,5 @@ public class LoginRepositoryImpl implements PanacheRepository<LoginEntity> {
     public LoginEntity getIdLogin(User user){
         return find("email", user.getEmail()).firstResult();
     }
+
 }

@@ -1,6 +1,6 @@
 package com.saveCash.adapters.controllers;
 
-import com.saveCash.adapters.controllers.request.LoginRequest;
+import com.saveCash.adapters.controllers.request.userRequest.LoginRequest;
 import com.saveCash.adapters.controllers.response.LoginResponse;
 import com.saveCash.adapters.utils.ApiResponse;
 import com.saveCash.exceptions.ErrorResponse;

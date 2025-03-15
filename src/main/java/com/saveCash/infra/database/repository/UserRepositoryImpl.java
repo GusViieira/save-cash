@@ -11,6 +11,8 @@ import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.time.LocalDateTime;
 
 @RequestScoped
@@ -36,9 +38,32 @@ public class UserRepositoryImpl implements PanacheRepository<UserEntity>, UserRe
         persist(entity);
     }
 
+    public User getUserById(BigInteger idUser){
+        UserEntity userEntity = find("idUser", idUser).firstResult();
+        return userInfraMapper.toUserUseCase(userEntity);
+    }
+
     public User getUserByIdLogin(int idLogin){
         UserEntity userEntity = find("login.id", idLogin).firstResult();
         return userInfraMapper.toUserUseCase(userEntity);
+    }
 
+    public UserEntity getUserByEmailLogin(User user){
+        return find("login.email", user.getEmail()).firstResult();
+    }
+
+
+    @Transactional
+    public User updateUser(User user){
+        UserEntity userResponse = getUserByEmailLogin(user);
+        userResponse.setName(user.getName());
+        userResponse.setSurname(user.getSurname());
+        userResponse.setPhoneNumber(user.getPhoneNumber());
+        userResponse.setCountry(user.getCountry());
+        userResponse.setBirthDate(user.getBirthDate());
+        persist(userResponse);
+
+        UserEntity userUpdated = getUserByEmailLogin(user);
+        return userInfraMapper.toUserUseCase(userUpdated);
     }
 }

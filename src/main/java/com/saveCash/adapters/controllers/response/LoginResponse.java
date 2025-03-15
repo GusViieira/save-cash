@@ -1,9 +1,18 @@
 package com.saveCash.adapters.controllers.response;
 
 public class LoginResponse {
+    private Long idUser;
     private String name;
     private String jwt;
     private String email;
+
+    public Long getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(Long idUser) {
+        this.idUser = idUser;
+    }
 
     public String getName() {
         return name;

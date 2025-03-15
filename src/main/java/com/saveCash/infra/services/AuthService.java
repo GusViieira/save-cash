@@ -16,8 +16,8 @@ public class AuthService {
     @Inject
     GetUserUseCase getUserUseCase;
 
-    public LoginResponse authenticate(String username, String password){
-        LoginEntity foundUser = LoginEntity.find("email = ?1", username).firstResult();
+    public LoginResponse authenticate(String email, String password){
+        LoginEntity foundUser = LoginEntity.find("email = ?1", email).firstResult();
 
         if(foundUser == null){
             throw new UserExceptions.UserNotFoundException("Usuário inválido");
@@ -29,8 +29,9 @@ public class AuthService {
 
         LoginResponse loginResponse = new LoginResponse();
         User user = getUserUseCase.getUserByLoginId(foundUser.getIdLogin());
+        loginResponse.setIdUser(user.getIdUser());
         loginResponse.setName(user.getName());
-        loginResponse.setEmail(username);
+        loginResponse.setEmail(email);
         loginResponse.setJwt(TokenGenerator.generate(foundUser.getEmail()));
 
         return loginResponse;
