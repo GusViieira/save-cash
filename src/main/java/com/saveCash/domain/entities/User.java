@@ -1,5 +1,7 @@
 package com.saveCash.domain.entities;
 
+import com.saveCash.infra.database.schemas.LoginEntity;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -13,6 +15,7 @@ public class User {
     private LocalDate birthDate;
     private String country;
     private LocalDateTime tsUpdate;
+    private LoginEntity login;
     private LocalDateTime tsregistration;
 
     public Long getIdUser() {
@@ -93,5 +96,13 @@ public class User {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public LoginEntity getLogin() {
+        return login;
+    }
+
+    public void setLogin(LoginEntity login) {
+        this.login = login;
     }
 }

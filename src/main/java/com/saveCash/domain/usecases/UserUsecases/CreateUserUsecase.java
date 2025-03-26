@@ -29,7 +29,8 @@ public class CreateUserUsecase {
             if(!violations.isEmpty()){
                 return Response.status(Response.Status.BAD_REQUEST).build();
             }
-            userRepository.createUser(userUseCaseMapper.toRepository(userRequest));
+
+            userRepository.createUser(userUseCaseMapper.dtoToRepository(userRequest));
             return Response.ok(Response.Status.CREATED).build();
         }catch (Exception e){
             if (e.getMessage().contains("Duplicate entry") && e.getMessage().contains("email_unico")) {

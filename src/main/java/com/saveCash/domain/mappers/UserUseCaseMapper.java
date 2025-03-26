@@ -8,6 +8,6 @@ import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "jakarta", injectionStrategy = InjectionStrategy.FIELD)
 public interface UserUseCaseMapper {
-    User toRepository(UserDTO userDTO);
     UserEntity toRepository(User user);
+    User dtoToRepository(UserDTO userDto);
 }

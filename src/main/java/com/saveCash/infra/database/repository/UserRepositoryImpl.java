@@ -48,22 +48,28 @@ public class UserRepositoryImpl implements PanacheRepository<UserEntity>, UserRe
         return userInfraMapper.toUserUseCase(userEntity);
     }
 
-    public UserEntity getUserByEmailLogin(User user){
-        return find("login.email", user.getEmail()).firstResult();
+    public User getUserByEmailLogin(String email){
+        UserEntity userEntity = find("login.email", email).firstResult();
+        return  userInfraMapper.toUserUseCase(userEntity);
     }
 
 
     @Transactional
-    public User updateUser(User user){
-        UserEntity userResponse = getUserByEmailLogin(user);
-        userResponse.setName(user.getName());
-        userResponse.setSurname(user.getSurname());
-        userResponse.setPhoneNumber(user.getPhoneNumber());
-        userResponse.setCountry(user.getCountry());
-        userResponse.setBirthDate(user.getBirthDate());
-        persist(userResponse);
+    public User updateUser(UserEntity user) {
+        UserEntity existingUser = find("email", user.getEmail()).firstResult();
 
-        UserEntity userUpdated = getUserByEmailLogin(user);
-        return userInfraMapper.toUserUseCase(userUpdated);
+        if (existingUser == null) {
+            throw new RuntimeException("Usuário não encontrado para o email: " + user.getEmail());
+        }
+
+        // Atualiza apenas os campos necessários
+        existingUser.setName(user.getName());
+        existingUser.setPhoneNumber(user.getPhoneNumber());
+        existingUser.setSurname(user.getSurname());
+        existingUser.setCountry(user.getCountry());
+        existingUser.setBirthDate(user.getBirthDate());
+        existingUser.setTsUpdateDate(LocalDateTime.now().toString());
+
+        return userInfraMapper.toUserUseCase(existingUser);
     }
 }

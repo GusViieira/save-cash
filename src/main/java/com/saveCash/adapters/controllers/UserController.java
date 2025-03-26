@@ -12,6 +12,7 @@ import com.saveCash.domain.usecases.UserUsecases.GetUserUseCase;
 import com.saveCash.domain.usecases.UserUsecases.UpdateUserUsecase;
 import com.saveCash.exceptions.ErrorResponse;
 import com.saveCash.exceptions.UserExceptions;
+import io.quarkus.security.Authenticated;
 import jakarta.inject.Inject;
 import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
@@ -41,6 +42,7 @@ public class UserController {
 
     @Path("/getUser")
     @GET
+    @Authenticated
     @Produces(MediaType.APPLICATION_JSON)
     public Response getUser(@QueryParam("idUser") BigInteger idUser) throws Exception {
         try{
@@ -67,11 +69,24 @@ public class UserController {
 
     @Path("/update")
     @PUT
+    @Authenticated
     public Response updateUser(@Valid UpdateUserRequest updateUserRequest) throws Exception {
         try{
             User updatedUser = updateUserUsecase.updateUser(userMapper.toUserUseCase(updateUserRequest));
             return Response.ok(new ApiResponse<>(updatedUser)).build();
         }catch (Exception e){
+            ErrorResponse error = new ErrorResponse(e.getMessage());
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(new ApiResponse<>(error)).build();
+        }
+    }
+
+    @Path("/forgot-password")
+    @POST
+    public Response forgotPassword(@QueryParam("email") String email) throws Exception{
+        try{
+            updateUserUsecase.forgotPassword(email);
+            return Response.ok(new ApiResponse<>("OK")).build();
+        }catch(Exception e){
             ErrorResponse error = new ErrorResponse(e.getMessage());
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(new ApiResponse<>(error)).build();
         }
