@@ -9,6 +9,7 @@ import com.saveCash.domain.entities.User;
 import com.saveCash.domain.usecases.UserUsecases.CreateUserUsecase;
 
 import com.saveCash.domain.usecases.UserUsecases.GetUserUseCase;
+import com.saveCash.domain.usecases.UserUsecases.RecoverPassUserUseCase;
 import com.saveCash.domain.usecases.UserUsecases.UpdateUserUsecase;
 import com.saveCash.exceptions.ErrorResponse;
 import com.saveCash.exceptions.UserExceptions;
@@ -40,10 +41,12 @@ public class UserController {
     @Inject
     private GetUserUseCase getUserUseCase;
 
+    @Inject
+    private RecoverPassUserUseCase recoverPassUserUseCase;
+
     @Path("/getUser")
     @GET
     @Authenticated
-    @Produces(MediaType.APPLICATION_JSON)
     public Response getUser(@QueryParam("idUser") BigInteger idUser) throws Exception {
         try{
             return Response.ok(new ApiResponse<>(getUserUseCase.getUserById(idUser))).build();
@@ -84,11 +87,25 @@ public class UserController {
     @POST
     public Response forgotPassword(@QueryParam("email") String email) throws Exception{
         try{
-            updateUserUsecase.forgotPassword(email);
-            return Response.ok(new ApiResponse<>("OK")).build();
+            recoverPassUserUseCase.forgotPassword(email);
+            return Response.ok(new ApiResponse<>("E-mail enviado com sucesso.")).build();
         }catch(Exception e){
             ErrorResponse error = new ErrorResponse(e.getMessage());
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(new ApiResponse<>(error)).build();
         }
+    }
+
+    @Path("/verify-otp")
+    @POST
+    public Response verifyOtp(@QueryParam("otp") String otp, @QueryParam("email") String email){
+     try{
+         if(recoverPassUserUseCase.verifyOtp(otp, email)){
+             return Response.ok(new ApiResponse<>("OTP válido")).build();
+     }
+            return Response.status(Response.Status.BAD_REQUEST).entity(new ApiResponse<>("OTP inválido")).build();
+     }catch (Exception e){
+         ErrorResponse error = new ErrorResponse(e.getMessage());
+         return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(new ApiResponse<>(error)).build();
+     }
     }
 }
