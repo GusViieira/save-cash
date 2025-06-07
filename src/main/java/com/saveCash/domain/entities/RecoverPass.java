@@ -6,12 +6,12 @@ import java.time.LocalDateTime;
 public class RecoverPass {
 
     public User user;
-    public String otp;
+    public String otpCode;
     public LocalDateTime expires;
 
-    public RecoverPass(User user, String otp, LocalDateTime expires) {
+    public RecoverPass(User user, String otpCode, LocalDateTime expires) {
         this.user = user;
-        this.otp = otp;
+        this.otpCode = otpCode;
         this.expires = expires;
     }
 
@@ -23,12 +23,12 @@ public class RecoverPass {
         this.user = user;
     }
 
-    public String getOtp() {
-        return otp;
+    public String getOtpCode() {
+        return otpCode;
     }
 
-    public void setOtp(String otp) {
-        this.otp = otp;
+    public void setOtpCode(String otpCode) {
+        this.otpCode = otpCode;
     }
 
     public LocalDateTime getExpires() {

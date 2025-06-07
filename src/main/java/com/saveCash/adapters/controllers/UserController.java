@@ -87,7 +87,7 @@ public class UserController {
     @POST
     public Response forgotPassword(@QueryParam("email") String email) throws Exception{
         try{
-            recoverPassUserUseCase.forgotPassword(email);
+            recoverPassUserUseCase.createOtp(email);
             return Response.ok(new ApiResponse<>("E-mail enviado com sucesso.")).build();
         }catch(Exception e){
             ErrorResponse error = new ErrorResponse(e.getMessage());

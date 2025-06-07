@@ -42,7 +42,7 @@ public class UpdateUserUsecase {
         try {
             return userRepository.getUserByEmailLogin(email);
         } catch (Exception e) {
-            throw new RuntimeException(e.getMessage());
+            throw new RuntimeException("Email não encontrado");
         }
     }
 

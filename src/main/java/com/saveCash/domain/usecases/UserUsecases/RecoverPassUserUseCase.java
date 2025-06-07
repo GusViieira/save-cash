@@ -27,7 +27,7 @@ public class RecoverPassUserUseCase {
         this.updateUserUsecase = updateUserUsecase;
     }
 
-    public String forgotPassword(String email) {
+    public String createOtp(String email) {
         String otp = OTPGenerator.generateOtp();
         RecoverPass recoverPass = new RecoverPass(
                 updateUserUsecase.getUserByEmailLogin(email),
@@ -42,10 +42,21 @@ public class RecoverPassUserUseCase {
 
     public boolean verifyOtp(String otpRequest, String email) {
         User userResponse = updateUserUsecase.getUserByEmailLogin(email);
+        RecoverPass recoverPass = getOtpCode(userResponse);
+
         if (Objects.isNull(userResponse)) {
             throw new RuntimeException("Usuário não encontrado");
         }
-        return Objects.equals(otpRequest, getOtpCode(userResponse));
+
+        if(!Objects.equals(otpRequest, recoverPass.getOtpCode())){
+            throw new RuntimeException("Código inválido");
+        }
+
+        if(LocalDateTime.now().isAfter(recoverPass.getExpires())){
+            throw new RuntimeException("Código expirado");
+        }
+
+        return true;
     }
 
     public void sendOtpEmail(String email, String otp) {
@@ -64,7 +75,7 @@ public class RecoverPassUserUseCase {
         }
     }
 
-    public String getOtpCode(User user){
+    public RecoverPass getOtpCode(User user){
         try{
             return recoverPassRepository.getOtpCode(user.getIdUser());
         }catch (Exception e){
