@@ -13,7 +13,7 @@ public class EmailService {
 
     public void sendOtpEmail(String email, String otp) {
         String subject = "Save Cash - Recuperação de Senha";
-        String body = "Seu código OTP para redefinir a senha é: " + otp + "\nEle expira em 10 minutos.";
+        String body = "Seu código OTP para redefinir a senha é: " + otp + "\nEle expira em 5 minutos.";
         System.out.println(email + subject + body);
         mailer.send(Mail.withText(email, subject, body));
     }

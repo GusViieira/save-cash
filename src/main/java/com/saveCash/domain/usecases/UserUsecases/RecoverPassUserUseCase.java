@@ -29,8 +29,9 @@ public class RecoverPassUserUseCase {
 
     public String createOtp(String email) {
         String otp = OTPGenerator.generateOtp();
+        User user = updateUserUsecase.getUserByEmailLogin(email);
         RecoverPass recoverPass = new RecoverPass(
-                updateUserUsecase.getUserByEmailLogin(email),
+                user,
                 otp,
                 LocalDateTime.now().plusMinutes(5)
         );

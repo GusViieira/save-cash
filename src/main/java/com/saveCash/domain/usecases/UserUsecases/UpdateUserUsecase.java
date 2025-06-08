@@ -8,6 +8,8 @@ import com.saveCash.domain.repositories.UserRepository;
 import com.saveCash.infra.database.schemas.LoginEntity;
 import com.saveCash.infra.services.EmailService;
 
+import java.util.Objects;
+
 public class UpdateUserUsecase {
 
     UserUseCaseMapper userUseCaseMapper;
@@ -40,9 +42,13 @@ public class UpdateUserUsecase {
 
     public User getUserByEmailLogin(String email) {
         try {
-            return userRepository.getUserByEmailLogin(email);
+            User user = userRepository.getUserByEmailLogin(email);
+            if(Objects.isNull(user)){
+                throw new RuntimeException("Usuário não encontrado");
+            }
+            return user;
         } catch (Exception e) {
-            throw new RuntimeException("Email não encontrado");
+            throw new RuntimeException(e.getMessage());
         }
     }
 

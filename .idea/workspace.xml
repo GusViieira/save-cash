@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="265e3bce-2dc8-4d1f-ac76-67f549ffe11a" name="Changes" comment="parte &#10;validacao otp">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/saveCash/infra/mappers/RecoverPassInfraMapper.java" afterDir="false" />
+    <list default="true" id="265e3bce-2dc8-4d1f-ac76-67f549ffe11a" name="Changes" comment="verificacao de otp: regras de validacao">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/saveCash/domain/usecases/UserUsecases/RecoverPassUserUseCaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/saveCash/adapters/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/saveCash/adapters/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/saveCash/domain/entities/RecoverPass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/saveCash/domain/entities/RecoverPass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/saveCash/domain/repositories/RecoverPassRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/saveCash/domain/repositories/RecoverPassRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/saveCash/domain/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/saveCash/domain/entities/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/saveCash/domain/usecases/UserUsecases/RecoverPassUserUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/saveCash/domain/usecases/UserUsecases/RecoverPassUserUseCase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/saveCash/domain/usecases/UserUsecases/UpdateUserUsecase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/saveCash/domain/usecases/UserUsecases/UpdateUserUsecase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/saveCash/infra/database/repository/RecoverPassRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/saveCash/infra/database/repository/RecoverPassRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/saveCash/infra/services/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/saveCash/infra/services/EmailService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +22,7 @@
       <list>
         <option value="Class" />
         <option value="Interface" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -66,30 +65,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Maven.save-cash [clean,install,-DskipTests...].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.save-cash [clean,install,-DskipTests].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.save-cash [clean,install,-Dskiptests].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.save-cash [clean,install,quarkus:dev...].executor&quot;: &quot;Debug&quot;,
-    &quot;Maven.save-cash [clean,install,quarkus:dev].executor&quot;: &quot;Run&quot;,
-    &quot;Remote JVM Debug.Dbug.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;#2 on sprint0&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/workspace estudos/quarkus-quickstarts-main/security-jwt-quickstart&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Maven.save-cash [clean,install,-DskipTests...].executor": "Run",
+    "Maven.save-cash [clean,install,-DskipTests].executor": "Run",
+    "Maven.save-cash [clean,install,-Dskiptests].executor": "Run",
+    "Maven.save-cash [clean,install,quarkus:dev...].executor": "Debug",
+    "Maven.save-cash [clean,install,quarkus:dev].executor": "Run",
+    "Remote JVM Debug.Dbug.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "#2 on sprint0",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/workspace estudos/quarkus-quickstarts-main/security-jwt-quickstart",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "terminal"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\workspace pessoal\save-cash\src\main\resources\keys" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.saveCash.domain.usecases.UserUsecases" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -227,7 +234,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749332783726</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="verificacao de otp: regras de validacao">
+      <option name="closed" value="true" />
+      <created>1749337469068</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1749337469068</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -240,6 +255,18 @@
     <MESSAGE value="correções gerais e inicio de implementação de serviços de email" />
     <MESSAGE value="correção na validação do token jwt" />
     <MESSAGE value="parte &#10;validacao otp" />
-    <option name="LAST_COMMIT_MESSAGE" value="parte &#10;validacao otp" />
+    <MESSAGE value="verificacao de otp: regras de validacao" />
+    <option name="LAST_COMMIT_MESSAGE" value="verificacao de otp: regras de validacao" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/saveCash/infra/database/repository/UserRepositoryImpl.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
