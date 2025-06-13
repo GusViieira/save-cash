@@ -7,7 +7,9 @@ import com.saveCash.domain.repositories.RecoverPassRepository;
 import com.saveCash.domain.repositories.UserRepository;
 import com.saveCash.infra.services.EmailService;
 import com.saveCash.infra.services.OTPGenerator;
+import io.quarkus.elytron.security.common.BcryptUtil;
 
+import java.math.BigInteger;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -27,7 +29,7 @@ public class RecoverPassUserUseCase {
         this.updateUserUsecase = updateUserUsecase;
     }
 
-    public String createOtp(String email) {
+    public void createOtp(String email) {
         String otp = OTPGenerator.generateOtp();
         User user = updateUserUsecase.getUserByEmailLogin(email);
         RecoverPass recoverPass = new RecoverPass(
@@ -37,11 +39,9 @@ public class RecoverPassUserUseCase {
         );
         persistOtp(recoverPass);
         sendOtpEmail(email, otp);
-        return otp;
-
     }
 
-    public boolean verifyOtp(String otpRequest, String email) {
+    public Boolean verifyOtp(String otpRequest, String email) {
         User userResponse = updateUserUsecase.getUserByEmailLogin(email);
         RecoverPass recoverPass = getOtpCode(userResponse);
 
@@ -58,6 +58,11 @@ public class RecoverPassUserUseCase {
         }
 
         return true;
+    }
+
+    public boolean changePassword(String email, String newPassword){
+        String newPassCrypted = BcryptUtil.bcryptHash(newPassword);
+        return updateUserUsecase.updateUserPassword(email, newPassCrypted);
     }
 
     public void sendOtpEmail(String email, String otp) {

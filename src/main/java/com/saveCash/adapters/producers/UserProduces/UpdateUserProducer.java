@@ -1,6 +1,7 @@
 package com.saveCash.adapters.producers.UserProduces;
 
 import com.saveCash.domain.mappers.UserUseCaseMapper;
+import com.saveCash.domain.repositories.LoginRepository;
 import com.saveCash.domain.repositories.RecoverPassRepository;
 import com.saveCash.domain.repositories.UserRepository;
 import com.saveCash.domain.usecases.UserUsecases.UpdateUserUsecase;
@@ -23,9 +24,12 @@ public class UpdateUserProducer {
     @Inject
     RecoverPassRepository recoverPassRepository;
 
+    @Inject
+    LoginRepository loginRepository;
+
     @Produces
     @RequestScoped
     UpdateUserUsecase updateUserUsecase(){
-        return new UpdateUserUsecase(userUseCaseMapper, userRepository, emailService, recoverPassRepository);
+        return new UpdateUserUsecase(userUseCaseMapper, userRepository, emailService, recoverPassRepository, loginRepository);
     }
 }

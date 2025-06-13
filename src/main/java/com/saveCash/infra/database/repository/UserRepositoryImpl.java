@@ -71,4 +71,5 @@ public class UserRepositoryImpl implements PanacheRepository<UserEntity>, UserRe
 
         return userInfraMapper.toUserUseCase(existingUser);
     }
+
 }

@@ -2,6 +2,7 @@ package com.saveCash.adapters.controllers;
 
 import com.saveCash.adapters.controllers.request.userRequest.CreateUserRequest;
 import com.saveCash.adapters.controllers.request.userRequest.GetUserRequest;
+import com.saveCash.adapters.controllers.request.userRequest.PasswordRequest;
 import com.saveCash.adapters.controllers.request.userRequest.UpdateUserRequest;
 import com.saveCash.adapters.mappers.UserMapper;
 import com.saveCash.adapters.utils.ApiResponse;
@@ -22,6 +23,7 @@ import jakarta.ws.rs.core.Response;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.Objects;
 
 
 @Path("/user")
@@ -83,7 +85,7 @@ public class UserController {
         }
     }
 
-    @Path("/forgot-password")
+    @Path("/recoverPassword")
     @POST
     public Response forgotPassword(@QueryParam("email") String email) throws Exception{
         try{
@@ -96,16 +98,31 @@ public class UserController {
     }
 
     @Path("/verify-otp")
-    @POST
+    @GET
     public Response verifyOtp(@QueryParam("otp") String otp, @QueryParam("email") String email){
      try{
-         if(recoverPassUserUseCase.verifyOtp(otp, email)){
-             return Response.ok(new ApiResponse<>("OTP válido")).build();
-     }
-            return Response.status(Response.Status.BAD_REQUEST).entity(new ApiResponse<>("OTP inválido")).build();
+         Boolean response = recoverPassUserUseCase.verifyOtp(otp, email);
+         if(response)
+             return Response.ok().build();
+         return Response.status(Response.Status.BAD_REQUEST).entity(new ApiResponse<>("Código inválido")).build();
      }catch (Exception e){
          ErrorResponse error = new ErrorResponse(e.getMessage());
          return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(new ApiResponse<>(error)).build();
-     }
+        }
+    }
+
+    @Path("/changePassword")
+    @POST
+    public Response changePassword(@Valid PasswordRequest passwordRequest){
+        try{
+            boolean response = recoverPassUserUseCase.changePassword(passwordRequest.getEmail(), passwordRequest.getPassword());
+            if(response){
+                return Response.ok(new ApiResponse<>("Nova senha definida com sucesso.")).build();
+            }
+            return Response.status(Response.Status.BAD_REQUEST).entity(new ApiResponse<>("Não foi possível alterar a senha.")).build();
+        } catch (Exception e) {
+            ErrorResponse error = new ErrorResponse(e.getMessage());
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(new ApiResponse<>(error)).build();
+        }
     }
 }

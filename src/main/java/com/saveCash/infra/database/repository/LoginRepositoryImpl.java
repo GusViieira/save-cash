@@ -1,14 +1,17 @@
 package com.saveCash.infra.database.repository;
 
 import com.saveCash.domain.entities.User;
+import com.saveCash.domain.repositories.LoginRepository;
 import com.saveCash.infra.database.schemas.LoginEntity;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.persistence.EntityExistsException;
 import jakarta.transaction.Transactional;
 
+import java.math.BigInteger;
+
 @RequestScoped
-public class LoginRepositoryImpl implements PanacheRepository<LoginEntity> {
+public class LoginRepositoryImpl implements PanacheRepository<LoginEntity>, LoginRepository {
 
     @Transactional
     public void registerLogin(User user){
@@ -24,4 +27,9 @@ public class LoginRepositoryImpl implements PanacheRepository<LoginEntity> {
         return find("email", user.getEmail()).firstResult();
     }
 
+    @Transactional
+    public boolean changeUserPassword(String newPassword, String email) {
+        int response = update("password = ?1 WHERE email = ?2", newPassword, email);
+        return response > 0;
+    }
 }

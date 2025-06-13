@@ -3,11 +3,13 @@ package com.saveCash.domain.usecases.UserUsecases;
 import com.saveCash.adapters.dtos.UserDTO;
 import com.saveCash.domain.entities.User;
 import com.saveCash.domain.mappers.UserUseCaseMapper;
+import com.saveCash.domain.repositories.LoginRepository;
 import com.saveCash.domain.repositories.RecoverPassRepository;
 import com.saveCash.domain.repositories.UserRepository;
 import com.saveCash.infra.database.schemas.LoginEntity;
 import com.saveCash.infra.services.EmailService;
 
+import java.math.BigInteger;
 import java.util.Objects;
 
 public class UpdateUserUsecase {
@@ -16,12 +18,14 @@ public class UpdateUserUsecase {
     UserRepository userRepository;
     EmailService emailService;
     RecoverPassRepository recoverPassRepository;
+    LoginRepository loginRepository;
 
-    public UpdateUserUsecase(UserUseCaseMapper userUseCaseMapper, UserRepository userRepository, EmailService emailService, RecoverPassRepository recoverPassRepository) {
+    public UpdateUserUsecase(UserUseCaseMapper userUseCaseMapper, UserRepository userRepository, EmailService emailService, RecoverPassRepository recoverPassRepository, LoginRepository loginRepository) {
         this.userUseCaseMapper = userUseCaseMapper;
         this.userRepository = userRepository;
         this.emailService = emailService;
         this.recoverPassRepository = recoverPassRepository;
+        this.loginRepository = loginRepository;
     }
 
     public User updateUser(UserDTO userRequest) {
@@ -60,6 +64,12 @@ public class UpdateUserUsecase {
         }
     }
 
-
+    public boolean updateUserPassword(String email, String newPassword){
+        try{
+           return loginRepository.changeUserPassword(newPassword, email);
+        }catch (Exception e){
+            throw new RuntimeException(e.getMessage());
+        }
+    }
 }
 

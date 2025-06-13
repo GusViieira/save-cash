@@ -8,8 +8,9 @@ import java.time.LocalDateTime;
 @Entity(name = "recover_pass")
 public class RecoverPassEntity extends PanacheEntityBase {
 
-    @Id
-    private int id;
+    @Id()
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     @OneToOne
     @JoinColumn(name = "id_user", nullable = false)
