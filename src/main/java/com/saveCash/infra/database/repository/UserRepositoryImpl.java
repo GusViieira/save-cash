@@ -52,13 +52,12 @@ public class UserRepositoryImpl implements PanacheRepository<UserEntity>, UserRe
         return  userInfraMapper.toUserUseCase(userEntity);
     }
 
-
     @Transactional
-    public User updateUser(UserEntity user) {
-        UserEntity existingUser = find("email", user.getEmail()).firstResult();
+    public User persistUpdateUser(UserEntity user) {
+        UserEntity existingUser = find("idUser", user.getIdUser()).firstResult();
 
         if (existingUser == null) {
-            throw new RuntimeException("Usuário não encontrado para o email: " + user.getEmail());
+            throw new RuntimeException("Usuário não encontrado");
         }
 
         // Atualiza apenas os campos necessários

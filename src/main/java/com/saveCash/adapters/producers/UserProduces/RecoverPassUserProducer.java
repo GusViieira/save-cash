@@ -16,12 +16,6 @@ public class RecoverPassUserProducer {
     UpdateUserUsecase updateUserUsecase;
 
     @Inject
-    UserUseCaseMapper userUseCaseMapper;
-
-    @Inject
-    UserRepository userRepository;
-
-    @Inject
     EmailService emailService;
 
     @Inject
@@ -30,6 +24,6 @@ public class RecoverPassUserProducer {
     @Produces
     @RequestScoped
     RecoverPassUserUseCase recoverPassUserUseCase(){
-        return new RecoverPassUserUseCase(userUseCaseMapper, userRepository, emailService, recoverPassRepository, updateUserUsecase);
+        return new RecoverPassUserUseCase(emailService, recoverPassRepository, updateUserUsecase);
     }
 }

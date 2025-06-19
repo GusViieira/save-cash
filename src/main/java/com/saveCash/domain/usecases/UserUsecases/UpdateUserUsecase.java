@@ -4,27 +4,19 @@ import com.saveCash.adapters.dtos.UserDTO;
 import com.saveCash.domain.entities.User;
 import com.saveCash.domain.mappers.UserUseCaseMapper;
 import com.saveCash.domain.repositories.LoginRepository;
-import com.saveCash.domain.repositories.RecoverPassRepository;
 import com.saveCash.domain.repositories.UserRepository;
-import com.saveCash.infra.database.schemas.LoginEntity;
-import com.saveCash.infra.services.EmailService;
 
-import java.math.BigInteger;
 import java.util.Objects;
 
 public class UpdateUserUsecase {
 
     UserUseCaseMapper userUseCaseMapper;
     UserRepository userRepository;
-    EmailService emailService;
-    RecoverPassRepository recoverPassRepository;
     LoginRepository loginRepository;
 
-    public UpdateUserUsecase(UserUseCaseMapper userUseCaseMapper, UserRepository userRepository, EmailService emailService, RecoverPassRepository recoverPassRepository, LoginRepository loginRepository) {
+    public UpdateUserUsecase(UserUseCaseMapper userUseCaseMapper, UserRepository userRepository, LoginRepository loginRepository) {
         this.userUseCaseMapper = userUseCaseMapper;
         this.userRepository = userRepository;
-        this.emailService = emailService;
-        this.recoverPassRepository = recoverPassRepository;
         this.loginRepository = loginRepository;
     }
 
@@ -35,13 +27,8 @@ public class UpdateUserUsecase {
         userResponse.setPhoneNumber(userRequest.getPhoneNumber());
         userResponse.setCountry(userRequest.getCountry());
         userResponse.setBirthDate(userRequest.getBirthDate());
-        User userUpdated = updateUser(userResponse);
 
-        LoginEntity loginEntity = new LoginEntity();
-        loginEntity.setIdLogin(userUpdated.getLogin().getIdLogin());
-        userUpdated.setLogin(loginEntity);
-
-        return userUpdated;
+        return setUpdateUser(userResponse);
     }
 
     public User getUserByEmailLogin(String email) {
@@ -56,9 +43,9 @@ public class UpdateUserUsecase {
         }
     }
 
-    public User updateUser(User user) {
+    public User setUpdateUser(User user) {
         try {
-            return userRepository.updateUser(userUseCaseMapper.toRepository(user));
+            return userRepository.persistUpdateUser(userUseCaseMapper.toRepository(user));
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage());
         }

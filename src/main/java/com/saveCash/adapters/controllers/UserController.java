@@ -7,11 +7,8 @@ import com.saveCash.adapters.controllers.request.userRequest.UpdateUserRequest;
 import com.saveCash.adapters.mappers.UserMapper;
 import com.saveCash.adapters.utils.ApiResponse;
 import com.saveCash.domain.entities.User;
-import com.saveCash.domain.usecases.UserUsecases.CreateUserUsecase;
+import com.saveCash.domain.usecases.UserUsecases.*;
 
-import com.saveCash.domain.usecases.UserUsecases.GetUserUseCase;
-import com.saveCash.domain.usecases.UserUsecases.RecoverPassUserUseCase;
-import com.saveCash.domain.usecases.UserUsecases.UpdateUserUsecase;
 import com.saveCash.exceptions.ErrorResponse;
 import com.saveCash.exceptions.UserExceptions;
 import io.quarkus.security.Authenticated;
@@ -45,6 +42,9 @@ public class UserController {
 
     @Inject
     private RecoverPassUserUseCase recoverPassUserUseCase;
+
+    @Inject
+    private ChangePasswordUseCase changePasswordUseCase;
 
     @Path("/getUser")
     @GET
@@ -115,7 +115,7 @@ public class UserController {
     @POST
     public Response changePassword(@Valid PasswordRequest passwordRequest){
         try{
-            boolean response = recoverPassUserUseCase.changePassword(passwordRequest.getEmail(), passwordRequest.getPassword());
+            boolean response = changePasswordUseCase.changePassword(passwordRequest.getEmail(), passwordRequest.getPassword());
             if(response){
                 return Response.ok(new ApiResponse<>("Nova senha definida com sucesso.")).build();
             }

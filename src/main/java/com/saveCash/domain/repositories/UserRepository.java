@@ -8,7 +8,7 @@ import java.math.BigInteger;
 public interface UserRepository {
     void createUser(User user);
     User getUserByIdLogin(int idLogin);
-    User updateUser(UserEntity userEntity);
+    User persistUpdateUser(UserEntity userEntity);
     User getUserById(BigInteger idUser);
     User getUserByEmailLogin(String email);
 }

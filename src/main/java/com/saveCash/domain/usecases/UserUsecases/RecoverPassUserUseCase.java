@@ -16,14 +16,10 @@ import java.util.Objects;
 public class RecoverPassUserUseCase {
 
     UpdateUserUsecase updateUserUsecase;
-    UserUseCaseMapper userUseCaseMapper;
-    UserRepository userRepository;
     EmailService emailService;
     RecoverPassRepository recoverPassRepository;
 
-    public RecoverPassUserUseCase(UserUseCaseMapper userUseCaseMapper, UserRepository userRepository, EmailService emailService, RecoverPassRepository recoverPassRepository, UpdateUserUsecase updateUserUsecase) {
-        this.userUseCaseMapper = userUseCaseMapper;
-        this.userRepository = userRepository;
+    public RecoverPassUserUseCase(EmailService emailService, RecoverPassRepository recoverPassRepository, UpdateUserUsecase updateUserUsecase) {
         this.emailService = emailService;
         this.recoverPassRepository = recoverPassRepository;
         this.updateUserUsecase = updateUserUsecase;
@@ -58,11 +54,6 @@ public class RecoverPassUserUseCase {
         }
 
         return true;
-    }
-
-    public boolean changePassword(String email, String newPassword){
-        String newPassCrypted = BcryptUtil.bcryptHash(newPassword);
-        return updateUserUsecase.updateUserPassword(email, newPassCrypted);
     }
 
     public void sendOtpEmail(String email, String otp) {

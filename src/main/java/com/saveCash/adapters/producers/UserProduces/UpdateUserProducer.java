@@ -19,17 +19,11 @@ public class UpdateUserProducer {
     UserRepository userRepository;
 
     @Inject
-    EmailService emailService;
-
-    @Inject
-    RecoverPassRepository recoverPassRepository;
-
-    @Inject
     LoginRepository loginRepository;
 
     @Produces
     @RequestScoped
     UpdateUserUsecase updateUserUsecase(){
-        return new UpdateUserUsecase(userUseCaseMapper, userRepository, emailService, recoverPassRepository, loginRepository);
+        return new UpdateUserUsecase(userUseCaseMapper, userRepository, loginRepository);
     }
 }
