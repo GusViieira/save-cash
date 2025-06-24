@@ -1,11 +1,12 @@
-package com.saveCash.adapters.dtos;
+package com.saveCash.domain.entities;
 
-import io.quarkus.elytron.security.common.BcryptUtil;
+import com.saveCash.infra.database.schemas.LoginEntity;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
-public class UserDTO {
-
+public class User {
+    private Long idUser;
     private String name;
     private String surname;
     private String email;
@@ -13,6 +14,17 @@ public class UserDTO {
     private String phoneNumber;
     private LocalDate birthDate;
     private String country;
+    private LocalDateTime tsUpdate;
+    private LoginEntity login;
+    private LocalDateTime tsregistration;
+
+    public Long getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(Long idUser) {
+        this.idUser = idUser;
+    }
 
     public String getName() {
         return name;
@@ -42,9 +54,24 @@ public class UserDTO {
         return password;
     }
 
-    // CRIPTOGRAFA A SENHA DO USUARIO CADASTRADA
     public void setPassword(String password) {
-        this.password = BcryptUtil.bcryptHash(password);
+        this.password = password;
+    }
+
+    public LocalDateTime getTsUpdate() {
+        return tsUpdate;
+    }
+
+    public void setTsUpdate(LocalDateTime tsUpdate) {
+        this.tsUpdate = tsUpdate;
+    }
+
+    public LocalDateTime getTsregistration() {
+        return tsregistration;
+    }
+
+    public void setTsregistration(LocalDateTime tsregistration) {
+        this.tsregistration = tsregistration;
     }
 
     public String getPhoneNumber() {
@@ -69,5 +96,13 @@ public class UserDTO {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public LoginEntity getLogin() {
+        return login;
+    }
+
+    public void setLogin(LoginEntity login) {
+        this.login = login;
     }
 }

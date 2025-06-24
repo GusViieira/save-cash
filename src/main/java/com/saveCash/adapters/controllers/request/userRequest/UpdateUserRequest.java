@@ -1,17 +1,37 @@
-package com.saveCash.adapters.dtos;
+package com.saveCash.adapters.controllers.request.userRequest;
 
-import io.quarkus.elytron.security.common.BcryptUtil;
+import jakarta.json.bind.annotation.JsonbDateFormat;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 import java.time.LocalDate;
 
-public class UserDTO {
-
+public class UpdateUserRequest {
+    @NotBlank(message = "Name is required")
+    @Size(min = 3, max = 50, message = "Name must be between 2 and 50 characters")
+    @Schema(description = "User name")
     private String name;
+
+    @NotBlank(message = "Surname is required")
+    @Size(min = 3, max = 50, message = "Surname must be between 2 and 50 characters")
+    @Schema(description = "The last name")
     private String surname;
+
+    @NotBlank(message = "Email is required")
+    @Email(message = "Invalid email format")
+    @Schema(description = "Email user")
     private String email;
-    private String password;
+
+    @Schema(description = "Number phone")
     private String phoneNumber;
+
+    @Schema(description = "Birth date in the format yyyy-MM-dd")
+    @JsonbDateFormat("yyyy-MM-dd")
     private LocalDate birthDate;
+
+    @Schema(description = "Country")
     private String country;
 
     public String getName() {
@@ -36,15 +56,6 @@ public class UserDTO {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    // CRIPTOGRAFA A SENHA DO USUARIO CADASTRADA
-    public void setPassword(String password) {
-        this.password = BcryptUtil.bcryptHash(password);
     }
 
     public String getPhoneNumber() {

@@ -1,4 +1,14 @@
 package com.saveCash.domain.repositories;
 
-interface UserRepository {
+import com.saveCash.domain.entities.User;
+import com.saveCash.infra.database.schemas.UserEntity;
+
+import java.math.BigInteger;
+
+public interface UserRepository {
+    void createUser(User user);
+    User getUserByIdLogin(int idLogin);
+    User persistUpdateUser(UserEntity userEntity);
+    User getUserById(BigInteger idUser);
+    User getUserByEmailLogin(String email);
 }
