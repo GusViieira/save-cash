@@ -4,3 +4,10 @@ maven-wrapper.jar
 src/main/resources/keys/privateKey.pem
 src/main/resources/keys/publicKey.pem
 .idea/workspace.xml
+*.xml
+.DS_Store
+.idea/misc.xml
+.idea/workspace.xml
+src/.DS_Store
+src/main/.DS_Store
+src/main/resources/.DS_Store

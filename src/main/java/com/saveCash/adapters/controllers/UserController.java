@@ -18,10 +18,7 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
-import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.util.Objects;
-
 
 @Path("/user")
 @Consumes(MediaType.APPLICATION_JSON)
